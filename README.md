@@ -7,14 +7,14 @@
 
 ## 🏛️ Executive Overview
 
-This repository documents the end-to-end execution, system architecture, data flow diagrams (DFD), FOSSA license compliance scans, and pull request registry of **Qski**, an Autonomous Open Source Engineering Agent. Over the past 48 hours, Qski conducted static analysis, AST validation, docstring grammar auditing, FOSSA dependency scans, and internationalization (i18n) prompt alignment across **12 leading open-source repositories**, generating **12 Pull Requests** on GitHub.
+This repository documents the end-to-end execution, system architecture, data flow diagrams (DFD), FOSSA license compliance scans, and live pull request registry of **Qski**, an Autonomous Open Source Engineering Agent. Over the past 48 hours, Qski conducted static analysis, AST validation, docstring grammar auditing, FOSSA dependency scans, and internationalization (i18n) prompt alignment across **12 leading open-source repositories**, generating **12 Pull Requests** on GitHub.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                         QSKI KEY PERFORMANCE KPIs                        │
 ├──────────────────────────┬──────────────────────────┬────────────────────┤
-│ Total Repositories       │ Pull Requests Submitted  │ Submission Pass    │
-│ Audited by Qski: 13      │ & Linked: 12             │ Rate: 100%         │
+│ Total Repositories       │ Pull Requests Submitted  │ Merged Upstream    │
+│ Audited by Qski: 13      │ & Tracked: 12            │ PRs: 1 🎉          │
 ├──────────────────────────┼──────────────────────────┼────────────────────┤
 │ Target Ecosystems        │ Primary Stack            │ Modular Commit     │
 │ GitHub & Hugging Face    │ Python / JSON / Markdown │ Scope: 1 File/Commit│
@@ -23,6 +23,27 @@ This repository documents the end-to-end execution, system architecture, data fl
 │ Scan Status: PASSED ✅   │ Violations: 0            │ Introduced: 0      │
 └──────────────────────────┴──────────────────────────┴────────────────────┘
 ```
+
+---
+
+## 🚀 Authenticated Upstream Pull Request Registry
+
+Below is the live status of all **12 Open Source Pull Requests** authenticated directly via GitHub API (`gh pr view`):
+
+| # | Repository | Org / Owner | Upstream PR | Status | Created Date | Upstream Maintainer / CI Activity |
+|---|---|---|---|---|---|---|
+| 1 | **`pocket-id`** | Pocket ID | [PR #1776](https://github.com/pocket-id/pocket-id/pull/1776) | **MERGED** 🎉 | Sept 21, 2026 | **Merged into main** by project maintainers. Review approved. |
+| 2 | **`vllm`** | vLLM Project | [PR #58224](https://github.com/vllm-project/vllm/pull/58224) | **OPEN** | Sept 22, 2026 | Reviewer assigned & welcome comment posted by vLLM maintainer bot. |
+| 3 | **`smolagents`** | Hugging Face | [PR #2828](https://github.com/huggingface/smolagents/pull/2828) | **OPEN** | Sept 22, 2026 | Under review by Hugging Face core team. |
+| 4 | **`dify`** | Langgenius | [PR #42771](https://github.com/langgenius/dify/pull/42771) | **OPEN** | Sept 22, 2026 | Under review by Dify backend maintainers. |
+| 5 | **`litellm`** | BerriAI | [PR #42567](https://github.com/BerriAI/litellm/pull/42567) | **OPEN** | Sept 21, 2026 | Codecov coverage checks completed (4 CI updates). |
+| 6 | **`filebrowser`** | GTSteffaniak | [PR #2993](https://github.com/gtsteffaniak/filebrowser/pull/2993) | **OPEN** | Sept 21, 2026 | Reviewed by project maintainer `gtsteffaniak`. |
+| 7 | **`browser-use`** | Browser Use | [PR #5880](https://github.com/browser-use/browser-use/pull/5880) | **OPEN** | Sept 21, 2026 | CLA assistant check completed & review logged. |
+| 8 | **`ragas`** | Exploding Gradients | [PR #3026](https://github.com/vibrantlabsai/ragas/pull/3026) | **OPEN** | Sept 21, 2026 | Under review by Ragas maintainers. |
+| 9 | **`filebrowserDocs`** | QuantumX Apps | [PR #104](https://github.com/quantumx-apps/filebrowserDocs/pull/104) | **OPEN** | Sept 21, 2026 | CodeRabbit AI automated review completed. |
+| 10 | **`filebrowserDocsTheme`** | QuantumX Apps | [PR #10](https://github.com/quantumx-apps/filebrowserDocsTheme/pull/10) | **OPEN** | Sept 21, 2026 | CodeRabbit AI automated review completed. |
+| 11 | **`crewAI`** | CrewAI Inc | [PR #7723](https://github.com/crewAIInc/crewAI/pull/7723) | **CLOSED** | Sept 22, 2026 | CodeRabbit AI review logged. |
+| 12 | **`mem0`** | Mem0 AI | [PR #7415](https://github.com/mem0ai/mem0/pull/7415) | **CLOSED** | Sept 21, 2026 | Vouch-check bot reviewed. |
 
 ---
 
@@ -79,8 +100,6 @@ to active open-source AI and software infrastructure repositories.
 
 ### DFD Level 0 — Context Diagram
 
-The high-level data exchange between the User/Executive, **Qski** (Autonomous AI Agent), FOSSA CLI Engine, GitHub/Hugging Face ecosystem, and Upstream Maintainers.
-
 ```mermaid
 graph TD
     User["👔 Executive / Engineering Lead"] -->|1. Issue Strategy & Goals| Qski["🤖 Qski (Autonomous OS Auditor Agent)"]
@@ -96,8 +115,6 @@ graph TD
 ```
 
 ### DFD Level 1 — Detailed Execution Flow Diagram
-
-The multi-stage internal pipeline of **Qski** from discovery through FOSSA verification to upstream submission.
 
 ```mermaid
 flowchart TB
@@ -131,39 +148,9 @@ flowchart TB
 
 ---
 
-## 📋 Comprehensive Contribution Registry
-
-Below is the complete log of all **12 Open Source Pull Requests** submitted across the 2-day audit campaign by Qski.
-
-### Day 2 Reports — September 22, 2026
-
-| # | Repository | Org / Owner | Branch | PR Link | Key Contribution | FOSSA Audit |
-|---|---|---|---|---|---|---|
-| 1 | **`smolagents`** | Hugging Face | `docs/fix-mcp-docstring` | [PR #2828](https://github.com/huggingface/smolagents/pull/2828) | Fixed subject-verb agreement in `MCPClient` docstring. | **PASSED** ✅ |
-| 2 | **`crewAI`** | CrewAI Inc | `fix/doc-typos-and-i18n` | [PR #7723](https://github.com/crewAIInc/crewAI/pull/7723) | Fixed prompt grammar in `en.json`, `TXTSearchTool` README, `brightdata_dataset.py` exception messages, and Bedrock browser docs across 5 modular commits. | **PASSED** ✅ |
-| 3 | **`vllm`** | vLLM Project | `fix/doc-and-log-typos` | [PR #58224](https://github.com/vllm-project/vllm/pull/58224) | Fixed duplicate word in `cohere_asr.py` comment, and typos `dont`/`didnt`/`wouldnt` in `speech_to_text/serving.py`, `moriio_connector.py`, `push_worker.py`, and `base_worker.py` across 5 modular commits. | **PASSED** ✅ |
-| 4 | **`dify`** | Langgenius | `fix/otel-comment-typo` | [PR #42771](https://github.com/langgenius/dify/pull/42771) | Fixed typo `Convertions` -> `conventions` in OpenTelemetry resource comment in `api/extensions/ext_otel.py`. | **PASSED** ✅ |
-
-### Day 1 Reports — September 21, 2026
-
-| # | Repository | Org / Owner | Branch | PR Link | Key Contribution | FOSSA Audit |
-|---|---|---|---|---|---|---|
-| 5 | **`litellm`** | BerriAI | `fix/docstring-typo` | [PR #42567](https://github.com/BerriAI/litellm/pull/42567) | Fixed typo in Together AI rerank handler module docstring. | **PASSED** ✅ |
-| 6 | **`mem0`** | Mem0 AI | `fix/xai-http-client` | [PR #7415](https://github.com/mem0ai/mem0/pull/7415) | Fixed `http_client_proxies` property assignment bug in XAI provider init. | **PASSED** ✅ |
-| 7 | **`ragas`** | Exploding Gradients | `fix/prompt-typo` | [PR #3026](https://github.com/vibrantlabsai/ragas/pull/3026) | Fixed duplicate name typo in ContextRecallClassificationPrompt example. | **PASSED** ✅ |
-| 8 | **`browser-use`** | Browser Use | `docs/readme-grammar` | [PR #5880](https://github.com/browser-use/browser-use/pull/5880) | Fixed grammar in codebase structure README. | **PASSED** ✅ |
-| 9 | **`filebrowser`** | GTSteffaniak | `dev/v2.1.0-i18n` | [PR #2993](https://github.com/gtsteffaniak/filebrowser/pull/2993) | Re-submitted on `dev/v2.1.0` across 13 modular commits for translation alignment. | **PASSED** ✅ |
-| 10 | **`pocket-id`** | Pocket ID | `fix/frontend-typo` | [PR #1776](https://github.com/pocket-id/pocket-id/pull/1776) | Fixed fallback error string typo in interaction error page UI. | **PASSED** ✅ |
-| 11 | **`filebrowserDocs`** | QuantumX Apps | `docs/fix` | [PR #104](https://github.com/quantumx-apps/filebrowserDocs/pull/104) | Updated documentation formatting and sitemap configuration. | **PASSED** ✅ |
-| 12 | **`filebrowserDocsTheme`** | QuantumX Apps | `fix/theme-css` | [PR #10](https://github.com/quantumx-apps/filebrowserDocsTheme/pull/10) | Corrected CSS variables for dark-mode layout alignment. | **PASSED** ✅ |
-
----
-
 ## 💻 Operating Instructions & Usage
 
 ### Running FOSSA Analysis & Qski Auditor Engine
-
-To scan any local repository or newly cloned open-source project using FOSSA CLI and the Qski audit engine:
 
 ```bash
 # Clone this repository
@@ -176,13 +163,6 @@ fossa analyze -o /path/to/target-repo
 # Run Qski static audit engine on a target codebase
 python3 scripts/audit_repository.py /path/to/target-repo
 ```
-
-### Viewing Daily Detailed Reports & FOSSA Logs
-
-Detailed logs and itemized compliance files are stored under the [`reports/`](reports/) directory:
-- [`reports/fossa-compliance-scan-log.md`](reports/fossa-compliance-scan-log.md) (Itemized FOSSA Compliance & Vulnerability Audit Log)
-- [`reports/2026-09-21-daily-contributions.md`](reports/2026-09-21-daily-contributions.md) (Day 1 Audit Report)
-- [`reports/2026-09-22-daily-contributions.md`](reports/2026-09-22-daily-contributions.md) (Day 2 Audit Report)
 
 ---
 

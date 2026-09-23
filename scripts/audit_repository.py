@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Autonomous Open Source Codebase Auditor Engine
+Qski — Autonomous Open Source Codebase Auditor Engine
 Inspects repositories for typos, duplicate words, i18n inconsistencies, and docstring formatting issues.
 """
 
@@ -48,7 +48,7 @@ def scan_file(file_path: str, repo_root: str) -> List[Dict[str, Any]]:
     try:
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             lines = f.readlines()
-    except Exception as e:
+    except Exception:
         return findings
 
     for line_idx, line in enumerate(lines, 1):
@@ -102,6 +102,7 @@ def audit_repository(repo_path: str) -> Dict[str, Any]:
                 all_findings.extend(file_findings)
 
     return {
+        'engine': 'Qski Codebase Auditor',
         'repository': os.path.abspath(repo_path),
         'files_scanned': total_files_scanned,
         'total_findings': len(all_findings),
@@ -110,7 +111,7 @@ def audit_repository(repo_path: str) -> Dict[str, Any]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Autonomous Open Source Codebase Auditor")
+    parser = argparse.ArgumentParser(description="Qski — Autonomous Open Source Codebase Auditor")
     parser.add_argument("path", help="Path to repository root directory")
     parser.add_argument("--json", action="store_true", help="Output results in JSON format")
     args = parser.parse_args()
@@ -124,7 +125,7 @@ def main():
     if args.json:
         print(json.dumps(result, indent=2))
     else:
-        print(f"\n🔍 Audit Summary for: {result['repository']}")
+        print(f"\n🔍 Qski Audit Summary for: {result['repository']}")
         print(f"📁 Files Scanned: {result['files_scanned']}")
         print(f"⚠️  Total Findings: {result['total_findings']}\n")
         print("-" * 80)
